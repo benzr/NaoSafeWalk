@@ -30,3 +30,4 @@ The test code should work (172.20.25.150 should be the ip address of lebleu) :
 
 The docs folder contains Git and GitHub books and tutorials
 
+That's all for now ...
