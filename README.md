@@ -23,6 +23,6 @@ Then initialize naoqi (only once at the first time)
 
 > . ./init_py_v2.bash
 
-The test code should work 172.20.25.150 should be the ip address of lebleu :
+The test code should work (172.20.25.150 should be the ip address of lebleu) :
 
 > python say.py --ip 172.20.25.150
