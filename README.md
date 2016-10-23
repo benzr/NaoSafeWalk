@@ -26,3 +26,7 @@ Then initialize naoqi (only once at the first time)
 The test code should work (172.20.25.150 should be the ip address of lebleu) :
 
 > python say.py --ip 172.20.25.150
+
+
+The docs folder contains Git and GitHub books and tutorials
+
