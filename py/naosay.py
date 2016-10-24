@@ -1,11 +1,24 @@
 """
-  NaoSay , Nao voicing functions
+  NaoSafeWalk : NAO (lebleu) is trying to move safely and to say hello to
+   peope on its path
 """
+from naoqi import ALProxy
 import time
 import sys
 import argparse
 
-import naosay
+def sayHello(robotIp,robotPort):
+    tts = ALProxy("ALTextToSpeech", robotIp, robotPort)
+    tts.say("Bonjour")
+
+def sayTxt(robotIp,robotPort,txtFile):
+    tts = ALProxy("ALTextToSpeech", robotIp, robotPort)
+    fp = open(txtFile,"r")
+    for l in fp.readlines():
+        print l
+        tts.say(l)
+        time.sleep(0.2)
+    fp.close()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -17,6 +30,4 @@ if __name__ == "__main__":
                         default="../resources/say_intro.txt",
                         help="text file to be said")
     args = parser.parse_args()
-    print args
-    #naosay.sayTxt(args.ip, args.port,args.text)
-    naosay.sayHello(args.ip, args.port)
+    sayTxt(args.ip, args.port,args.text)
