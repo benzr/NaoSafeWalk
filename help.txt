@@ -1,0 +1,5 @@
+Fichier d'aide :
+
+La commande "clone" permet de copier un projet GitHub sur mon ordinateur (local)
+
+ 
