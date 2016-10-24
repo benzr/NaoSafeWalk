@@ -1,1 +1,0 @@
-La commande status permet à git de connaître l'état de git
