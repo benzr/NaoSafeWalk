@@ -17,7 +17,7 @@ def sayTxt(robotIp,robotPort,txtFile):
     for l in fp.readlines():
         print l
         tts.say(l)
-        time.sleep(0.2)
+        time.sleep(0.25)
     fp.close()
 
 if __name__ == "__main__":
