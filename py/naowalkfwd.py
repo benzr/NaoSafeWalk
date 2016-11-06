@@ -13,11 +13,11 @@ def init(robotIp,robotPort):
     global motionPxy
     motionPxy = ALProxy("ALMotion", robotIp, robotPort)
 
-def moveFowardInfinite(speed):
+def moveForwardInfinite(speed):
     global motionPxy
     motionPxy.move(0.1,0.0,0.0) 
 
-def moveFowardAndStop(speed,duration):
+def moveForwardAndStop(speed,duration):
     global motionPxy
     motionPxy.move(0.1,0.0,0.0) 
     time.sleep(duration)
@@ -40,11 +40,12 @@ if __name__ == "__main__":
                         default=2.0,
                         help="duration in s")
     args = parser.parse_args()
-    
+
     init(args.ip, args.port)
-    moveForwardInfinite(args.vx)
-    time.sleep(5.0)
-    stop()
-
+    
     moveForwardAndStop(args.vx,args.dur)
+    time.sleep(args.dur)
 
+    moveForwardInfinite(args.vx)
+    time.sleep(args.dur)
+    stop()
