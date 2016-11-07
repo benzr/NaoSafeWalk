@@ -36,7 +36,7 @@ def set_nao_face_detection_tracking(nao_ip, nao_port, tracking_enabled):
 
 def main():
     # Specify your IP address here.
-    nao_ip = "127.0.0.1"
+    nao_ip = "172.20.25.150"
     nao_port = 9559
 
     tracking_enabled = True
