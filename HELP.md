@@ -8,4 +8,6 @@ to add a file to github , use git add
 
 utiliser git status pour connaître l'état du projet
 
-Matthieu Chailloux a une grosse barbe et des grosses lunettes!!! :)
+Matthieu Chailloux a une grosse barbe et des grosses lunettes!!! :) :)
+
+
