@@ -20,14 +20,18 @@ def move(robotIp, robotPort, x, y, theta, temps):
         print "Could not create proxy to ALRobotPosture"
         print "Error was: ", e
 
-    postureProxy.goToPosture("StandInit", 0.5)
+    postureProxy.goToPosture("StandInit", 0.7)
+
+    time.sleep(0.1)
 
     frequency  = 1.0
     motionProxy.setWalkTargetVelocity(x, y, theta, frequency)
 
     time.sleep(temps)
     motionProxy.stopMove()
-    postureProxy.goToPosture("StandInit", 0.0)
+    postureProxy.goToPosture("StandInit", 0.7)
+    time.sleep(0.1)
+    motionProxy.rest()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -35,13 +39,13 @@ if __name__ == "__main__":
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
-    parser.add_argument("--x", type=float, default=0.5,
-                        help="Robot port number")
+    parser.add_argument("--x", type=float, default=0.2,
+                        help="X param")
     parser.add_argument("--y", type=float, default=0.0,
-                        help="Robot port number")
+                        help="Y param")
     parser.add_argument("--theta", type=float, default=0.0,
-                        help="Robot port number")
-    parser.add_argument("--time", type=float, default=2.0,
-                        help="Robot port number")
+                        help="Theta param")
+    parser.add_argument("--time", type=float, default=5.0,
+                        help="Time in seconds")
     args = parser.parse_args()
-    move(args.ip, args.port,args.x,args.y,args.theta,args.temps)
+    move(args.ip, args.port,args.x,args.y,args.theta,args.time)
