@@ -3,4 +3,4 @@ Contributors to this project are:
 - trx95
 - TilletJ
 - bnzr
--ClementRolinat
+- ClementRolinat
