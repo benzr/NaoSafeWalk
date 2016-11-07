@@ -14,7 +14,7 @@ import time
 
 from naoqi import ALProxy
 
-IP = "nao.local"  # Replace here with your NaoQi's IP address.
+IP = "172.20.25.150"  # Replace here with your NaoQi's IP address.
 PORT = 9559
 
 # Create a proxy to ALFaceDetection
@@ -75,9 +75,21 @@ for i in range(0, 20):
 
         # Second Field = Extra info (empty for now).
         faceExtraInfo = faceInfo[1]
-
+	
         print "  alpha %.3f - beta %.3f" % (faceShapeInfo[1], faceShapeInfo[2])
         print "  width %.3f - height %.3f" % (faceShapeInfo[3], faceShapeInfo[4])
+
+
+	try:
+    	    tts = ALProxy("ALTextToSpeech", IP, PORT)
+	except Exception,e:
+   	    print "Could not create proxy to ALTextToSpeech"
+    	    print "Error was: ",e
+   	    sys.exit(1)
+    
+	#Says a test std::string
+	tts.say("Je te vois !")
+
 
     except Exception, e:
       print "faces detected, but it seems getData is invalid. ALValue ="
