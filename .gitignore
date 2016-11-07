@@ -1,2 +1,5 @@
 *.pyc
 *.*~
+*.bash
+.idea
+
